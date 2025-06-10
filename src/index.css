@@ -1,0 +1,149 @@
+#dropdown-menu::after {
+  display: none !important;
+  
+}
+
+.headermain{
+    border-bottom: 5px solid rgb(87, 165, 4);
+}
+
+/* Full-width and custom background color for dropdown menu */
+.dropdown-menu.w-100 {
+  width: 95vw !important;
+  border-radius: 5;
+  border: 2px solid rgb(33, 41, 35) ;
+  background-color: rgb(78, 79, 81) !important; /* Your color */
+}
+
+/* Style each dropdown item */
+.dropdown-item {
+  color: #fff !important;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+}
+
+/* Hover effect */
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000000 !important;;
+}
+
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* for subHeader*/
+
+.sports-nav i {
+  display: block;
+  margin-bottom: 4px;
+  color: rgb(87, 165, 4);
+  font-size: 10px;
+  
+}
+.sports-nav {
+    background-color: rgb(234, 234, 234);
+    
+
+}
+
+.sports-nav .text-center {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: rgb(11, 11, 11);
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+
+.favourite{
+    
+    border: solid 2px rgb(192, 160, 0);
+    border-radius: 50px;
+    
+}
+.favourite i{
+    color: rgb(192, 160, 0);
+}
+.favetext{
+    color: rgb(192, 160, 0);
+}
+
+
+/* for sub-sub header*/
+.custom-active-btn{
+    background-color: rgb(87, 165, 4);
+    border: none;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    
+    
+}
+
+.custom-inactive-btn {
+  background-color: transparent;
+  color: rgb(87, 165, 4);
+  border: 1px solid rgb(87, 165, 4);
+  font-size: 12px;
+  padding: 5px;
+}
+
+.custom-active-btn-live{
+    color: rgb(255, 255, 255);
+    border: none;
+    background-color: rgb(207, 1, 1);
+    font-size: 12px;
+}
+.custom-inactive-btn-live{
+  color:  rgb(87, 165, 4);
+    border: none;
+    border: 1px solid rgb(87, 165, 4); 
+    font-size: 12px;
+}
+
+/* sub nav bar active and inactive tap */
+
+
+
+.nav-item-custom {
+  transition: color 0.3s ease;
+}
+
+.nav-item-custom.active {
+  color: #000000 !important;
+  background-color: white;
+  border-radius: 15px 15px 0 0;
+  
+}
+
+.nav-item-custom.inactive {
+  color: #000000 !important;
+}
+
+.favetext {
+  font-weight: bold;
+}
+
+
