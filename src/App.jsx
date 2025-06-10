@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './components/header'
+import Header from './components/Header'
 import SubHeader from './components/SubHeader'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FootBall from './pages/footBall';
