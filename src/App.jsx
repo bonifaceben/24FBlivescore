@@ -3,7 +3,7 @@ import SubHeader from './components/Subheader'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FootBall from './pages/footBall';
 import BasketBall from './pages/basketBall';
-import Header from './components/header'
+import Header from './components/Header'
 
 
 function App() {
