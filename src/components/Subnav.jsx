@@ -3,7 +3,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { NavLink } from 'react-router-dom';
 
 
-const SubHeader = () => {
+const Subnav = () => {
    
 
   return (
@@ -97,4 +97,4 @@ const SubHeader = () => {
   );
 };
 
-export default SubHeader;
+export default Subnav;
