@@ -12,10 +12,17 @@ function footBall() {
         try {
           const baseUrl = import.meta.env.VITE_API_BASE_URL;
           const response = await fetch(`${baseUrl}/matches/live`);
-          const data = await response.json(); 
-          setLiveMatches(data);
+          const data = await response.json();
+
+          console.log('API response:', data); // 🔍 Check structure in dev console
+
+          // Adjust this based on the actual API structure
+          const matches = Array.isArray(data) ? data : data.data || []; 
+
+          setLiveMatches(matches);
         } catch (error) {
           console.error('Error fetching live matches:', error);
+          setLiveMatches([]);
         } finally {
           setLoading(false);
         }
