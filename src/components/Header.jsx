@@ -32,7 +32,7 @@ const Header = () => {
   }, [showSearch]);
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="headermain">
+    <Navbar  variant="dark" expand="lg" className="headermain">
       <Container fluid className="d-flex justify-content-between align-items-center">
 
         {/* Logo */}

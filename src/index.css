@@ -4,7 +4,7 @@
 }
 
 .headermain{
-    border-bottom: 5px solid rgb(87, 165, 4);
+  background-color: #161616;
 }
 
 /* Full-width and custom background color for dropdown menu */
@@ -59,6 +59,7 @@
   margin-bottom: 4px;
   color: rgb(87, 165, 4);
   font-size: 10px;
+  
   
 }
 .sports-nav {
@@ -146,4 +147,39 @@
   font-weight: bold;
 }
 
+.allmatchcontainer{
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  background-color: #252525;
+   
+}
 
+.leaguename{
+  margin-left: 10px;
+}
+
+.matchcontainer{
+  background-color: #000000;
+  padding-top: 30px;
+  
+}
+.allleague{
+  background-color: rgb(24, 24, 24);
+  border: solid rgb(102, 102, 102) 0.1px;
+  border-radius: 20px;
+}
+.homeandaway{
+  color: rgb(79, 147, 6); 
+  font-size: 14px;
+  
+}
+
+.matchtime{
+  color: rgb(173, 173, 173);
+  font-size: 10px; 
+}
+
+.horisontalline{
+  color: white;
+}
