@@ -33,11 +33,11 @@ const Header = () => {
 
   return (
     <Navbar  variant="dark" expand="lg" className="headermain">
-      <Container fluid className="d-flex justify-content-between align-items-center">
+      <Container fluid className="d-flex justify-content-between align-items-center headermain2">
 
         {/* Logo */}
         <div className="d-flex align-items-center">
-          <img src={logo} alt="Logo" height="45" className="me-2" />
+          <img src={logo} alt="Logo" height="28" className="me-2" />
         </div>
 
         {/* Right Side */}
@@ -45,7 +45,7 @@ const Header = () => {
 
           {/* Search Icon */}
           <i
-            className="bi bi-search text-white fs-5"
+            className="bi bi-search text-white"
             role="button"
             onClick={() => setShowSearch(true)}
           ></i>
@@ -77,7 +77,7 @@ const Header = () => {
               className="dropdownlist"
               style={{ background: 'transparent', border: 'none' }}
             >
-              <i className="bi bi-list fs-3 text-white"></i>
+              <i className="bi bi-list text-white"></i>
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="w-100">

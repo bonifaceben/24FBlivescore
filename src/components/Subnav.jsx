@@ -1,13 +1,20 @@
 import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { NavLink } from 'react-router-dom';
+import footballlogo from '../assets/footballlogo.png'
+import basketball from '../assets/basketball.png'
+import tenis from '../assets/tenis.png'
+import cricket from '../assets/cricket.png'
+import hockey from '../assets/hockey.png'
+import star from '../assets/star.png'
+
 
 
 const Subnav = () => {
    
 
   return (
-    <div className="sports-nav text-white py-1">
+    <div className="sports-nav ">
   <div className="container d-flex justify-content-between flex-wrap">
 
     {/* Football */}
@@ -18,8 +25,8 @@ const Subnav = () => {
       }
     >
       <div>
-        <i className="bi bi-trophy fs-4"></i>
-        <div>Football</div>
+        <img src={footballlogo} alt="football" height="20" className="me-2" />
+        <div className='subnavtext'>Football</div>
       </div>
     </NavLink>
 
@@ -31,8 +38,8 @@ const Subnav = () => {
       }
     >
       <div>
-        <i className="bi bi-basket2-fill fs-4"></i>
-        <div>Basketball</div>
+        <img src={basketball} alt="football" height="20" className="me-2" />
+        <div className='subnavtext'>Basketball</div>
       </div>
     </NavLink>
 
@@ -44,8 +51,8 @@ const Subnav = () => {
       }
     >
       <div>
-        <i className="bi bi-award fs-4"></i>
-        <div>Tennis</div>
+         <img src={tenis} alt="football" height="20" className="me-2" />
+        <div className='subnavtext'>Tennis</div>
       </div>
     </NavLink>
 
@@ -57,8 +64,8 @@ const Subnav = () => {
       }
     >
       <div>
-        <i className="bi bi-shield-fill fs-4"></i>
-        <div>Cricket</div>
+         <img src={cricket} alt="football" height="20" className="me-2" />
+        <div className='subnavtext'>Cricket</div>
       </div>
     </NavLink>
 
@@ -70,8 +77,8 @@ const Subnav = () => {
       }
     >
       <div>
-        <i className="bi bi-snow fs-4"></i>
-        <div>Hockey</div>
+         <img src={hockey} alt="football" height="20" className="me-2" />
+        <div className='subnavtext'>Hockey</div>
       </div>
     </NavLink>
 
@@ -83,7 +90,7 @@ const Subnav = () => {
       }
     >
       <div>
-        <i className="bi bi-star-fill fs-4"></i>
+         <img src={star} alt="football" height="20" className="me-2" />
         <div className="favetext">Fav</div>
       </div>
     </NavLink>

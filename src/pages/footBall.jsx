@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Spinner from '../components/Spinner';
 
 function FootBall() {
   const [activeButton, setActiveButton] = useState('all');
@@ -47,9 +48,9 @@ function FootBall() {
   }, [activeButton, selectedDate]);
 
   return (
-    <div className=''>
+    <div className='cont-2'>
       {/* Filter Buttons */}
-      <div className="container d-flex justify-content-start flex-nowrap gap-3 mt-2">
+      <div className="container d-flex justify-content-start flex-nowrap gap-1 pt-3">
         {['all', 'live', 'finished', 'schedule'].map((type) => (
           <button
             key={type}
@@ -64,8 +65,19 @@ function FootBall() {
               type.charAt(0).toUpperCase() + type.slice(1)
             )}
           </button>
+
+          
         ))}
-      </div>
+
+        <button
+      type="button"
+      className="btndatebtn"
+      onClick={() => window._datePickerRef?.showPicker()}
+    >
+      <i className="bi bi-calendar-event" style={{ fontSize: '1rem' }}></i>
+    </button>
+     </div>
+
 
       {['schedule', 'finished', 'all'].includes(activeButton) && (
   <div className="container mt-3 position-relative">
@@ -79,13 +91,7 @@ function FootBall() {
     />
 
     {/* Calendar icon as button */}
-    <button
-      type="button"
-      className="btn btn-outline-secondary"
-      onClick={() => window._datePickerRef?.showPicker()}
-    >
-      <i className="bi bi-calendar-event" style={{ fontSize: '1.5rem' }}></i>
-    </button>
+    
   </div>
 )}
 
@@ -95,7 +101,7 @@ function FootBall() {
       {/* Matches */}
       <div className="mt-4 container">
         {loading ? (
-          <p>Loading {activeButton} matches...</p>
+          <Spinner/>
         ) : matches.length === 0 ? (
           <p>No {activeButton} matches available.</p>
         ) : (

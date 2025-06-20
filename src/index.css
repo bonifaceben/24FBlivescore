@@ -4,8 +4,17 @@
 }
 
 .headermain{
-  background-color: #161616;
+  background-color: #1c1c1c;
+  height: 50px;
+  border-bottom: solid 1px rgb(51, 51, 51);
 }
+
+
+.subnavcontainer{
+  background-color: red;
+}
+
+
 
 /* Full-width and custom background color for dropdown menu */
 .dropdown-menu.w-100 {
@@ -63,7 +72,8 @@
   
 }
 .sports-nav {
-    background-color: rgb(234, 234, 234);
+    background-color: rgb(23, 23, 23);
+    padding-top: 10px;
     
 
 }
@@ -93,14 +103,17 @@
 
 
 /* for sub-sub header*/
-.custom-active-btn{
-    background-color: rgb(87, 165, 4);
-    border: none;
-    color: white;
-    font-size: 12px;
-    padding: 5px;
-    
-    
+.custom-active-btn {
+  background-color: rgb(87, 165, 4);
+  border: none;
+  color: white;
+  font-size: 12px;
+  width: 80px;
+  height: 30px;
+display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .custom-inactive-btn {
@@ -108,7 +121,13 @@
   color: rgb(87, 165, 4);
   border: 1px solid rgb(87, 165, 4);
   font-size: 12px;
-  padding: 5px;
+ font-size: 12px;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .custom-active-btn-live{
@@ -116,6 +135,7 @@
     border: none;
     background-color: rgb(207, 1, 1);
     font-size: 12px;
+    
 }
 .custom-inactive-btn-live{
   color:  rgb(87, 165, 4);
@@ -130,17 +150,25 @@
 
 .nav-item-custom {
   transition: color 0.3s ease;
+ 
+}
+
+.subnavtext{
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  margin-left: -7px;
+  padding-top: 3px;
 }
 
 .nav-item-custom.active {
-  color: #000000 !important;
-  background-color: white;
-  border-radius: 15px 15px 0 0;
+  color: #ffffff !important;
+  border-bottom: solid 2px greenyellow ;
   
+ 
 }
 
 .nav-item-custom.inactive {
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .favetext {
@@ -161,7 +189,6 @@
 
 .matchcontainer{
   background-color: #000000;
-  padding-top: 30px;
   
 }
 .allleague{
@@ -182,4 +209,33 @@
 
 .horisontalline{
   color: white;
+}
+
+.spinner{
+  color: rgb(79, 147, 6);
+  font-size: 60px;
+  border: none;
+  
+}
+
+.btndatebtn{
+  border: solid rgb(79, 147, 6);
+  border-radius: 20px;
+  color: rgb(79, 147, 6);
+  display: flex;
+  
+}
+.cont-2{
+  background-color: #000000;
+}
+
+.spiner-container{
+  background-color: #000000;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
