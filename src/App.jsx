@@ -4,6 +4,7 @@ import FootBall from './pages/footBall';
 import BasketBall from './pages/BasketBall';
 import Header from './components/Header'
 import Subnav from './components/Subnav';
+import MatchDetails from './pages/MatchDetails';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<FootBall />} />
         <Route path="/basket-ball" element={<BasketBall />} />
+        <Route path="/match/:fixtureId" element={<MatchDetails />} />
        
       </Routes>
     </Router>
