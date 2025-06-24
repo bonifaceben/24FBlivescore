@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../components/Spinner';
+import useFavourites from '../hooks/useFavourites';
 
 function FootBall() {
   const [activeButton, setActiveButton] = useState('all');
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { favourites, toggleFavourite, isFavourite } = useFavourites();
 
   const today = new Date().toISOString().split('T')[0];
   const [selectedDate, setSelectedDate] = useState(today);
@@ -106,28 +108,56 @@ function FootBall() {
                   <strong className='leaguename'>{item.league.name} - {item.league.country}</strong>
                 </div>
 
-                {item.matches.map(match => (
-                  <div
-                    key={match.id}
-                    className="mt-2 match-click-area"
-                    onClick={() => handleMatchClick(match.id)}
-                    style={{ cursor: 'pointer' }}
-                  >
-                    <hr className='horisontalline' />
-                    <div className="d-flex justify-content-between">
-                      <div className='homeandaway'>
-                        <img src={match.teams.home.logo} alt={match.teams.home.name} width={20} /> {match.teams.home.name}
-                      </div>
-                      <strong className='homeandaway'>
-                        {match.score.current.home} - {match.score.current.away}
-                      </strong>
-                      <div className='homeandaway'>
-                        {match.teams.away.name} <img src={match.teams.away.logo} alt={match.teams.away.name} width={20} />
-                      </div>
-                    </div>
-                    <div className="matchtime">{match.elapsed}' || {match.status}</div>
-                  </div>
-                ))}
+                {item.matches.map(match => {
+  const fav = isFavourite(match.id);
+
+  return (
+    <div
+      key={match.id}
+      className="mt-2 match-click-area"
+      style={{ cursor: 'pointer' }}
+      onClick={() => handleMatchClick(match.id)}
+    >
+      <hr className='horisontalline' />
+
+      <div className="d-flex justify-content-between align-items-center">
+        <div className='homeandaway'>
+          <img src={match.teams.home.logo} alt={match.teams.home.name} width={20} /> {match.teams.home.name}
+        </div>
+
+        <strong className='homeandaway'>
+          {match.score.current.home} - {match.score.current.away}
+        </strong>
+
+        <div className='homeandaway'>
+          {match.teams.away.name} <img src={match.teams.away.logo} alt={match.teams.away.name} width={20} />
+        </div>
+
+        {/* Star Button */}
+        <button
+          title={fav ? "Remove from favourites" : "Add to favourites"}
+          style={{
+            background: 'none',
+            border: 'none',
+            fontSize: '1.7rem',
+            color: fav ? 'gold' : '#ccc',
+            cursor: 'pointer',
+            paddingLeft: '10px',
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleFavourite(match);
+          }}
+        >
+          {fav ? '★' : '☆'}
+        </button>
+      </div>
+
+      <div className="matchtime">{match.elapsed}' || {match.status}</div>
+    </div>
+  );
+})}
+
               </div>
             ))
           )}

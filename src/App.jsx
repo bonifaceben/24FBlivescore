@@ -5,6 +5,7 @@ import BasketBall from './pages/BasketBall';
 import Header from './components/Header'
 import Subnav from './components/Subnav';
 import MatchDetails from './pages/MatchDetails';
+import FavouritesPage from './pages/FavouritesPage'
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <Route path="/" element={<FootBall />} />
         <Route path="/basket-ball" element={<BasketBall />} />
         <Route path="/match/:fixtureId" element={<MatchDetails />} />
+        <Route path="/Favourites" element={<FavouritesPage />} />
+       
        
       </Routes>
     </Router>

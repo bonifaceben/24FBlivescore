@@ -84,7 +84,7 @@ const Subnav = () => {
 
     {/* Favourites */}
     <NavLink
-      to="/favourites"
+      to="/Favourites"
       className={({ isActive }) =>
          `text-decoration-none flex-fill text-center nav-item-custom ${isActive ? 'active' : 'inactive'}`
       }

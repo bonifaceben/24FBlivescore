@@ -185,6 +185,8 @@ display: flex;
 
 .leaguename{
   margin-left: 10px;
+  color: rgb(205, 205, 205);
+  font-size: 16px;
 }
 
 .matchcontainer{
@@ -197,8 +199,10 @@ display: flex;
   border-radius: 20px;
 }
 .homeandaway{
-  color: rgb(79, 147, 6); 
-  font-size: 14px;
+  color: rgb(70, 135, 1); 
+  font-size: 12px;
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   
 }
 
@@ -237,5 +241,20 @@ display: flex;
   display: flex;
   justify-content: center;
   align-items: center;
+  
+}
+
+.favourites-container{
+  background-color: #000000;
+  padding-top: 20px;
+  width: 100%;
+  height: 100vh;
+}
+
+.favourite-match{
+  color: rgb(176, 176, 176);
+  font-size: 14px;
+  border: solid rgb(100, 100, 100);
+  border-radius: 10px;
   
 }
