@@ -16,7 +16,7 @@ const FavouritesPage = () => {
         
         <div className="d-flex flex-column justify-content-center align-items-center" style={{ height: '60vh' }}>
   <img src={empty} alt="Logo" height="90" className="mb-2" />
-  <p className="text-center text-white">Empty Favourites</p>
+  <p className="text-center text-white">No Data</p>
 </div>
 
           
