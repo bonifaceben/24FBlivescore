@@ -310,6 +310,102 @@ display: flex;
   background-color: rgb(255, 251, 251) !important;
 }
 
-
-
 /* search modal */
+
+
+/* match details page*/
+
+.matchdetailscon{
+  background-color: #000000;
+  width: 100%;
+  height: fit-content;
+}
+.matchdetailsleague{
+  background-color: rgb(28, 27, 27);
+  padding: 10px;
+  border-radius: 20px;
+}
+.matchdetailsleague-title{
+  color: rgb(175, 175, 175);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.matchdetailsleague-score{
+  color: rgb(164, 141, 98);
+  margin-top: 20px;
+}
+
+.matchdetails-primarybtn{
+  background-color: rgb(33, 33, 33) !important;
+  color: rgb(179, 179, 179) !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+  border-radius: 20px !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+
+.matchdetails-sec-btn{
+  border: solid 1px  rgb(88, 88, 88) !important;
+  color: rgb(179, 179, 179) !important;
+  font-weight: bold !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+  border-radius: 20px !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+
+.sub-cont{
+  border: solid rgb(52, 52, 52);
+  border-radius: 20px;
+  
+}
+
+.event-title{
+  color: rgb(224, 224, 224);
+  font-size: 13px;
+}
+.event-sub{
+  color: rgb(109, 109, 109);
+}
+.event-details {
+  color: rgb(172, 172, 172);
+  font-size: 12px;
+  
+}
+.boder-buttom-matchdetail{
+  border-bottom: solid 1px rgb(59, 59, 59);
+}
+
+
+/* lin-up css for match destils*/
+
+.pitch-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pitch-img {
+  width: 100%;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.player-icon {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 2px 4px;
+  font-size: 11px;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
