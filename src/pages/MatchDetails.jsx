@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Spinner from '../components/Spinner';
+import LineupPitch from '../components/LineupPitch';
+
 
 const MatchDetails = () => {
   const { fixtureId } = useParams();
@@ -113,86 +115,95 @@ const MatchDetails = () => {
               </div>
             ))
           ) : (
-            <p>No event data available.</p>
+            <p className='no-matchdetails'>No event data av ailable.</p>
           )}
         </div>
       )}
 
       {/* LINEUPS */}
-      {activeTab === 'lineups' && (
-        <div className="mb-4">
-          
-          {lineups?.home || lineups?.away ? (
-            <>
-              {[lineups.home, lineups.away].map((team, index) => (
-                <div key={index} className="mb-4">
-                  <h5>{team?.team?.name || 'Unknown Team'}</h5>
-                  <p>Coach: {team?.coach?.name || 'N/A'}</p>
-                  <p>Formation: {team?.formation || 'N/A'}</p>
-                  {Array.isArray(team?.startXI) && team.startXI.length > 0 ? (
-                    <ul>
-                      {team.startXI.map((player, i) => (
-                        <li key={i}>
-                          {player?.photo && (
-                            <img
-                              src={player.photo}
-                              alt={player.name}
-                              width={24}
-                              height={24}
-                              className="me-2 rounded-circle"
-                            />
-                          )}
-                          <strong>{player?.number}</strong> - {player?.name} ({player?.position})
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p>No starting lineup data available.</p>
-                  )}
-                </div>
-              ))}
-            </>
-          ) : (
-            <p>No lineup data available.</p>
-          )}
-        </div>
-      )}
+{activeTab === 'lineups' && (
+  <div className="mb-4">
+    {lineups?.home && lineups?.away ? (
+      <>
+        
+        <LineupPitch homeTeam={lineups.home} awayTeam={lineups.away} />
+      </>
+    ) : (
+      <p className='no-matchdetails'>No lineups </p>
+    )}
+  </div>
+)}
+
 
       {/* STATISTICS */}
-      {activeTab === 'statistics' && (
-        <div className="mb-4">
-          <h4>Match Statistics</h4>
-          {statistics.length > 0 ? (
-            statistics.map((teamStat, idx) => (
-              <div key={idx} className="mb-3">
-                <h5>{teamStat.team?.name}</h5>
-                <ul>
-                  {teamStat.statistics.map((stat, i) => (
-                    <li key={i}>{stat.type}: {stat.value ?? 'N/A'}</li>
-                  ))}
-                </ul>
+{activeTab === 'statistics' && (
+  <div className="mb-4">
+    
+    {statistics.length === 2 ? (
+      <div className="stat-table">
+        {statistics[0].statistics.map((stat, i) => {
+          const homeStat = statistics[0].statistics[i];
+          const awayStat = statistics[1].statistics[i];
+
+          // Parse numbers for progress bars
+          const homeValue = parseFloat(homeStat.value) || 0;
+          const awayValue = parseFloat(awayStat.value) || 0;
+          const total = homeValue + awayValue || 1;
+
+          const homePercent = (homeValue / total) * 100;
+          const awayPercent = (awayValue / total) * 100;
+
+          return (
+            <div key={i} className="mb-3">
+              <div className="d-flex justify-content-between align-items-center mb-1">
+                <small className="text-start stat-text" style={{ width: '25%' }}>
+                  {homeStat.value ?? 0}
+                </small>
+                <small className="text-center stat-text-center fw-bold" style={{ width: '50%' }}>
+                  {homeStat.type}
+                </small>
+                <small className="text-end stat-text" style={{ width: '25%' }}>
+                  {awayStat.value ?? 0}
+                </small>
               </div>
-            ))
-          ) : (
-            <p>No statistics available.</p>
-          )}
-        </div>
-      )}
+              <div className="progress" style={{ height: '10px' }}>
+                <div
+                  className="progress-bar progresshome"
+                  role="progressbar"
+                  style={{ width: `${homePercent}%` }}
+                />
+                <div
+                  className="progress-bar progressaway"
+                  role="progressbar"
+                  style={{ width: `${awayPercent}%` }}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    ) : (
+      <p className='no-matchdetails'>No stats</p>
+    )}
+  </div>
+)}
+
 
       {/* H2H */}
       {activeTab === 'h2h' && (
         <div className="mb-4">
-          <h4>Head-to-Head Matches</h4>
           {h2h.length > 0 ? (
             h2h.map((match, idx) => (
-              <div key={idx} className="border rounded p-3 mb-3">
-                <div className="d-flex align-items-center mb-2">
+              <div key={idx} className=" p-3 mb-3 h2hborder">
+                <div className="d-flex align-items-center mb-2 ">
                   {match.league?.logo && (
                     <img src={match.league.logo} alt={match.league.name} width={24} className="me-2" />
                   )}
-                  <strong>{match.league?.name}</strong> - {new Date(match.fixture?.date).getFullYear()}
+                  <strong className='h2hleague'>{match.league?.name}</strong> - <span className='text-white'>
+  {new Date(match.fixture?.date).getFullYear()}
+</span>
                 </div>
-                <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex justify-content-between align-items-center h2hteam">
                   <span>
                     <img src={match.teams?.home?.logo} alt="home" width={20} className="me-1" />
                     {match.teams?.home?.name}
@@ -206,7 +217,7 @@ const MatchDetails = () => {
               </div>
             ))
           ) : (
-            <p>No H2H data available.</p>
+            <p className='no-matchdetails'>No H2H</p>
           )}
         </div>
       )}
